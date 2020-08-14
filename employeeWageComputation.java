@@ -2,19 +2,17 @@ public class employeeWageComputation
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Welcome to Employee Wage Computation Problem in Java");
-		int isPresent=1;
-
-        	int empCheck=(int)((Math.random()*10)%2);
-
-        	if(isPresent==empCheck)
-        	{
-            		System.out.println("Employee is Present");
-       		}
-        	else
-        	{
-            		System.out.println("Employee is Absent");
-        	}
+		int fullTimeEmp=1;
+        	int empRatePerHour=20;
+		int empHrs = 0;
+        	int empWage=0;
+        	int randomCheck=(int)((Math.random()*10)%2);
+        	if(fullTimeEmp==randomCheck)
+		{
+			empHrs = 8;
+		}
+		empWage=empHrs*empRatePerHour;
+		System.out.println("Employee Wage is : " + empWage);
 	}
 }
 
