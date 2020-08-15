@@ -12,28 +12,32 @@ public class employeeWageComputation
         }
         public void calculate20DayWage()
         {
-                //Local Variable
-                int emp_Hour;
-                int emp_Wage;
+                int Emp_Hour;
+                int Emp_Wage;
                 int totalEmpWage=0;
-                for (int day=1; day<=NUMBER_OF_WORKING_DAYS; day++ )
+                int Maximum_Hour=50;
+                int Total_Hour=0;
+                int Total_Working_Days=0;
+
+                while( Total_Hour<=Maximum_Hour  && Total_Working_Days<=NUMBER_OF_WORKING_DAYS )
                 {
+                        Total_Working_Days++;
                         int randomCheck=(int)(Math.random()*10)%3;
-                        switch(randomCheck)
+                switch(randomCheck)
 			{
-                                case IS_FULL_TIME:
-                                        emp_Hour=8;
-                                        break;
-                                case IS_PART_TIME:
-                                        emp_Hour=4;
-                                        break;
-                                default:
-                                        emp_Hour=0;
-                        }
-                        emp_Wage=emp_Hour*EMP_RATE_PER_HOUR;
-                        totalEmpWage=totalEmpWage+emp_Wage;
-                        System.out.println("Employee Wage : "+emp_Wage);
+                        case IS_FULL_TIME:
+                                Emp_Hour=8;
+                                break;
+                        case IS_PART_TIME:
+                                Emp_Hour=4;
+                                break;
+                        default:
+                                Emp_Hour=0;
+                	}
+                Total_Hour=Total_Hour+Emp_Hour;
                 }
-                System.out.println("Total Employee Wage : " +totalEmpWage);
+                totalEmpWage=Total_Hour*EMP_RATE_PER_HOUR;
+                System.out.println("Total Employee Hour : "+Total_Hour);
+                System.out.println("Total Employee Wages : " +totalEmpWage);
         }
 }
